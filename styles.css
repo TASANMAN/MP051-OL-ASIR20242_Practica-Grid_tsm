@@ -1,105 +1,117 @@
 /* Estilos básicos */
 body {
-    font-family: Arial, sans-serif; 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Estilo del encabezado (header) */
-header {
-    background: #4CAF50; 
-    color: white; 
-    padding: 1rem; 
-    text-align: center; 
-    justify-content: space-between; 
-    align-items: center; 
-}
-
-/* Estilo de los enlaces del menú de navegación */
-header nav a {
-    margin: 0 1rem; /* Añade espacio horizontal entre los enlaces */
-    color: white;    
-}
-
-/* Estilo para el logo */
-.logo {
-    width: 300px; 
-    height: auto; 
-    vertical-align: middle; 
-    margin-right: 10px; 
-}
-
-/* Estilo para las imágenes en la lista de datos */
-.data-icon {
-    width: 200px; 
-    height: auto; 
-    margin-right: 8px; 
-}
 /* Contenedor principal con Grid */
-.container {    
-    height: 100vh;
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* Barra lateral y contenido principal */
+  grid-template-rows: auto 1fr auto; /* Encabezado, contenido y pie de página */
+  grid-template-areas:
+    'header header'
+    'sidebar main'
+    'footer footer';
+  gap: 20px; /* Espacio entre elementos */
+  height: 100vh; /* Altura completa de la ventana */
 }
 
-/* Asignación de áreas en el grid */
-
-
-.sidebar {   
-    background: #f0f0f0; /* Fondo gris claro */
-    padding: 1rem; /* Espaciado interno */
+/* Encabezado */
+header {
+  grid-area: header;
+  background: #4caf50;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Estilo de la lista del sidebar */
-.sidebar ul {  
-    padding: 0; 
+/* Logo */
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+/* Navegación */
+nav a {
+  margin: 0 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+/* Barra lateral */
+.sidebar {
+  grid-area: sidebar;
+  background: #f0f0f0;
+  padding: 1rem;
+}
+
+.sidebar ul {
+  padding: 0;
+  list-style: none;
 }
 
 .sidebar ul li {
-    margin-bottom: 1rem; 
+  margin-bottom: 1rem;
 }
 
 .sidebar ul li a {
-    text-decoration: none; 
-    color: #333; 
+  text-decoration: none;
+  color: #333;
 }
 
+/* Contenido principal */
 main {
-    padding: 1rem; 
+  grid-area: main;
+  padding: 1rem;
 }
 
-footer {
-    background: #4CAF50; 
-    color: white; 
-    text-align: center; 
-    padding: 1rem; 
+/* Sección de estadísticas */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-/* Grid para la sección de categorías*/
-.stats {   
-    gap: 1rem; 
-    margin-bottom: 2rem; 
-}
-
-/* Estilo de las cajas de categorías */
 .stat-box {
-    background: #e0e0e0; 
-    padding: 1rem; 
-    text-align: center; 
-    border-radius: 8px; 
+  background: #e0e0e0;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
 }
 
-/* Flexbox para la lista de tipos de vivienda */
+/* Sección de datos */
 .data ul {
-    gap: 1rem; 
-    list-style: none; 
-    padding: 0; 
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
 }
 
 .data ul li {
-    background: #f4f4f4; 
-    padding: 1rem; 
-    border-radius: 4px; 
-    text-align: center; 
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  flex: 1;
 }
 
+.data-icon {
+  width: 50px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
 
+/* Pie de página */
+footer {
+  grid-area: footer;
+  background: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
