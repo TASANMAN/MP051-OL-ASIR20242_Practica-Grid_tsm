@@ -4,114 +4,166 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #f8f9fa;
 }
 
-/* Contenedor principal con Grid */
 .container {
-  display: grid;
-  grid-template-columns: 1fr 3fr; /* Barra lateral y contenido principal */
-  grid-template-rows: auto 1fr auto; /* Encabezado, contenido y pie de página */
-  grid-template-areas:
-    'header header'
-    'sidebar main'
-    'footer footer';
-  gap: 20px; /* Espacio entre elementos */
-  height: 100vh; /* Altura completa de la ventana */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 }
 
 /* Encabezado */
 header {
-  grid-area: header;
   background: #4caf50;
   color: white;
+  width: 100%;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-/* Logo */
 .logo {
   width: 100px;
-  height: auto;
 }
 
-/* Navegación */
 nav a {
-  margin: 0 1rem;
   color: white;
   text-decoration: none;
-}
-
-/* Barra lateral */
-.sidebar {
-  grid-area: sidebar;
-  background: #f0f0f0;
-  padding: 1rem;
-}
-
-.sidebar ul {
-  padding: 0;
-  list-style: none;
-}
-
-.sidebar ul li {
-  margin-bottom: 1rem;
-}
-
-.sidebar ul li a {
-  text-decoration: none;
-  color: #333;
+  margin: 0 10px;
 }
 
 /* Contenido principal */
 main {
-  grid-area: main;
-  padding: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
 }
 
-/* Sección de estadísticas */
 .stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .stat-box {
   background: #e0e0e0;
-  padding: 1rem;
-  text-align: center;
+  padding: 15px;
   border-radius: 8px;
+  flex: 1;
+  min-width: 100px;
 }
 
-/* Sección de datos */
 .data ul {
   display: flex;
-  gap: 1rem;
-  list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 0;
+  list-style: none;
 }
 
 .data ul li {
   background: #f4f4f4;
   padding: 1rem;
   border-radius: 4px;
+  margin: 5px;
   text-align: center;
   flex: 1;
+  min-width: 150px;
 }
 
 .data-icon {
   width: 50px;
-  height: auto;
   margin-bottom: 0.5rem;
+}
+
+/* Sidebar */
+.sidebar ul {
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Formulario de contacto */
+.contacto h2,
+.ubicacion h2,
+.contacto label {
+  color: #ccc;
+}
+
+.contacto form {
+  background: #333;
+  padding: 1rem;
+  border-radius: 8px;
+  color: white;
+}
+
+.contacto input,
+.contacto textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contacto textarea {
+  height: 2.5rem;
+}
+
+.contacto button {
+  background: #4caf50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Sección de ubicación */
+.ubicacion {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.ubicacion h2 {
+  color: #ccc;
+}
+
+.ubicacion-img {
+  max-width: 100%;
+  border-radius: 8px;
 }
 
 /* Pie de página */
 footer {
-  grid-area: footer;
   background: #4caf50;
   color: white;
   text-align: center;
   padding: 1rem;
+  width: 100%;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stats,
+  .data ul {
+    flex-direction: column;
+    align-items: center;
+  }
 }

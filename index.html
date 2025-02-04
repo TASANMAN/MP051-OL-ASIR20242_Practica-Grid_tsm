@@ -1,31 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="MARA" />
+    <meta name="theme-color" content="#GREEN" />
+    <meta name="description" content="Inmobiliaria Simpson e Hijos" />
+    <meta name="robots" content="index,follow" />
+    <meta name="google" content="notranslate" />
     <title>Inmobiliaria</title>
+    <link
+      rel="shortcut icon"
+      href="images/inmobiliaria.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
       <header>
         <img src="images/logo.png" alt="Logo" class="logo" />
+        <h1>INMOBILIARIA SIMPSON E HIJOS</h1>
         <nav>
           <a href="#">Inicio</a>
           <a href="#">Servicios</a>
-          <a href="#">Contacto</a>
+          <a href="#contacto">Contacto</a>
         </nav>
       </header>
       <aside class="sidebar">
         <ul>
-          <li><a href="#">Enlace 1</a></li>
-          <li><a href="#">Enlace 2</a></li>
-          <li><a href="#">Enlace 3</a></li>
+          <li><a href="#">Obra nueva</a></li>
+          <li><a href="#">Alquiler</a></li>
+          <li><a href="#">Segunda mano</a></li>
         </ul>
       </aside>
       <main>
         <section class="stats">
-          <div class="stat-box">Estadística 1</div>
-          <div class="stat-box">Estadística 2</div>
-          <div class="stat-box">Estadística 3</div>
+          <div class="stat-box">Comunidad</div>
+          <div class="stat-box">Centro</div>
+          <div class="stat-box">Afueras</div>
         </section>
         <section class="data">
           <ul>
@@ -34,28 +47,55 @@
                 src="images/vivienda1.jpg"
                 alt="Icono 1"
                 class="data-icon"
-              />Tipo de Vivienda 1
+              />Unifamiliares
             </li>
             <li>
               <img
                 src="images/vivienda2.jpg"
                 alt="Icono 2"
                 class="data-icon"
-              />Tipo de Vivienda 2
+              />Pisos/Comunidad
             </li>
             <li>
               <img
                 src="images/vivienda3.jpg"
                 alt="Icono 3"
                 class="data-icon"
-              />Tipo de Vivienda 3
+              />Campo
             </li>
           </ul>
+        </section>
+
+        <!-- Formulario de Contacto -->
+        <section id="contacto" class="contacto">
+          <h2>Contacto</h2>
+          <form action="enviar.php" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required />
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+          </form>
+        </section>
+
+        <!-- Sección de Ubicación -->
+        <section class="ubicacion">
+          <h2>Nuestra Ubicación</h2>
+          <img
+            src="images/mapa.png"
+            alt="Ubicación de la inmobiliaria"
+            class="ubicacion-img"
+          />
         </section>
       </main>
       <footer>
         <p>&copy; 2025 Mi Empresa</p>
       </footer>
     </div>
-  </head>
+  </body>
 </html>
